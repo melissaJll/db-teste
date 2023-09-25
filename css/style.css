@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+
+html { font-size: 17px;}
+body { font-family: 'Quicksand', sans-serif; background-color: #F5F3F3;}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+}
+
+a { 
+    color: #7662a5;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+
+.Aprovado{
+    color: green;
+}
+.Recuperacao{
+    color: rgb(47, 85, 189);
+}
+.Reprovado{
+    color: rgb(214, 23, 23);
+}
+
+
+h2 a { font-size: 0.9rem;}
+
+a:hover, a:focus { text-decoration: underline;}
+
+.btn-light{
+    background-color: rgb(212, 47, 41);
+    border: none;
+}
+.btn-secondary{
+    background-color: #7662a5;
+    border: none;
+}
+.btn-secondary:hover{
+    background-color: #8a78b3;
+    border: none;
+}
+.btn-light:hover{
+    background-color: rgb(219, 76, 71);
+    border: none;
+}
+.search{
+    display: flex;
+    flex-direction: row;
+     justify-content: center;
+     align-items: center;
+}
+.bg-light{
+    background-color: #7662a5 !important;
+    margin-bottom: 50px;
+}
+
+.cards-index{
+    display: flex;
+    justify-content: space-evenly;
+}
+.cards-index a{
+    text-decoration: none;
+}
+.card-body{
+    margin: 20px;
+}
+.card{
+    background: rgb(238,64,64)!important;
+    background: linear-gradient(270deg, rgba(238,64,64,1) 0%, rgba(227,73,73,1) 25%, rgba(246,70,70,1) 79%, rgba(241,76,76,1) 99%)!important;
+    border: none !important;
+}
+
+.fa-arrow-right{
+    margin-top: 5px;
+    border: #F5F3F3 solid 2px;
+    border-radius: 100%;
+    padding: 8px;
+}
+
+.box-search{
+    display: flex !important; 
+    justify-content: center !important;
+    gap: .1% !important;
+}
+.not-found{
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1{
+    color: #ee4040;
+    font-weight: 600;
+}
+
+thead th, button a, button {
+    color: rgb(248, 248, 248)  !important ;
+}
+
+
+
+
+
+table{
+    border-radius: solid 10px #eee9e9 !important ;
+}/*
+table td{
+    border-collapse: separate; 
+    border-spacing: 40px;
+    margin: 10px;
+}
+table th{
+    background-color: #e0514c;
+}  */

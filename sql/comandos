@@ -1,0 +1,97 @@
+```sql
+CREATE DATABASE crud_psi CHARACTER SET utf8mb4;
+
+CREATE TABLE profissionais(
+    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    nomeProfissional VARCHAR(40) NOT NULL,
+    especialidade VARCHAR(40) ,
+    preco DECIMAL(5,2)
+);
+
+
+CREATE TABLE clientes(
+    idCliente INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    nomeCliente VARCHAR(40) NOT NULL
+);
+
+CREATE TABLE consultas(
+    idConsulta INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    dataConsulta DATE,
+    plataforma VARCHAR(40),
+    idProfissional INT NOT NULL,
+    idCliente INT NOT NULL
+);
+
+ALTER TABLE consultas
+    ADD CONSTRAINT fk_consultas_profissional FOREIGN KEY (idProfissional)
+    REFERENCES profissionais(id) ON DELETE CASCADE;
+
+ALTER TABLE consultas
+    ADD CONSTRAINT fk_consultas_cliente FOREIGN KEY (idCliente)
+	REFERENCES clientes(idCliente) ON DELETE CASCADE
+
+
+
+
+CREATE TABLE profissionais_clientes (
+    idProfissional INT,
+    idCliente INT,
+    CONSTRAINT fk_profissionais_clientes PRIMARY KEY (IdProfissional, IdCliente),
+    CONSTRAINT profissionais_clientes FOREIGN KEY (idProfissional)
+       REFERENCES profissionais(id),
+    CONSTRAINT clientes_profissionais
+        FOREIGN KEY (idCliente) REFERENCES clientes(idCliente)
+);
+
+
+-- tabela profissionais 
+INSERT INTO profissionais (nomeProfissional, especialidade, preco)
+VALUES
+    ('Ana Silva', 'Clínica', 150.00),
+    ('Carlos Santos', 'Educacional', 200.50),
+    ('Maria Oliveira', 'Infantil', 120.75),
+    ('Dr. João Pereira', 'Organizacional', 180.25),
+    ('Sofia Rodrigues', 'Saúde Mental', 160.00);
+
+-- tabela clientes
+INSERT INTO clientes (nomeCliente)
+VALUES
+    ('Maria Silva'),
+    ('João Santos'),
+    ('Ana Oliveira'),
+    ('Pedro Pereira'),
+    ('Sofia Rodrigues');
+
+
+
+
+--Inner Join
+SELECT
+    c.nomeCliente AS 'Paciente',
+    co.dataConsulta AS 'Data da Consulta', co.plataforma AS 'Plataforma', co.idConsulta AS 'id da consulta', 
+    p.preco AS 'Preço', p.nomeProfissional AS Profissional
+FROM
+    consultas co
+INNER JOIN
+    profissionais p ON co.idProfissional = p.id
+INNER JOIN
+    clientes c ON co.idCliente = c.idCliente;
+
+
+
+SELECT
+    c.nomeCliente,
+    co.dataConsulta , co.plataforma , co.idConsulta , 
+    p.preco , p.nomeProfissional
+FROM
+    consultas co
+INNER JOIN
+    profissionais p ON co.idProfissional = p.id
+INNER JOIN
+    clientes c ON co.idCliente = c.idCliente;
+
+
+
+```
+<!-- ALTER TABLE consultas
+MODIFY plataforma ENUM('Zoom', 'Google Meet') NOT NULL; -->
