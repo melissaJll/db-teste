@@ -40,11 +40,6 @@ $somaPrecos = calcularSomaPrecos($listaConsultas);
     <h1 class="text-center">Lista de Consultas</h1>
     <hr>
 
-   <!-- Aqui você deverá criar o HTML que quiser e o PHP necessários
-para exibir a relação de alunos existentes no banco de dados.
-
-Obs.: não se esqueça de criar também os links dinâmicos para
-as páginas de atualização e exclusão. -->
 
     <table class="table">
         <thead>
