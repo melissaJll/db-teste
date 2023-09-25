@@ -18,21 +18,21 @@ function lerProfissionais(PDO $conexao):array {
     return $resultado; 
 }
 
-function lerUmProfissional(PDO $conexao, Int $IdProfissional): array{
-    $sql = "SELECT * FROM fabricantes WHERE id = :id"; 
+// function lerUmProfissional(PDO $conexao, Int $IdProfissional): array{
+//     $sql = "SELECT * FROM profissionais WHERE id = :id"; 
 
-    try {
-        $consulta = $conexao->prepare($sql);
+//     try {
+//         $consulta = $conexao->prepare($sql);
 
-        $consulta->bindValue(":id", $IdDoFabricante, PDO::PARAM_INT);
+//         $consulta->bindValue(":id", $IdProfissional, PDO::PARAM_INT);
 
-        $consulta-> execute();
+//         $consulta-> execute();
 
-        $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
+//         $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
 
-    } catch (Exception $erro) {
-        die("Erro ao carregar!". $erro->getMessage());
-    }
+//     } catch (Exception $erro) {
+//         die("Erro ao carregar!". $erro->getMessage());
+//     }
 
-    return $resultado;
-}
+//     return $resultado;
+// }

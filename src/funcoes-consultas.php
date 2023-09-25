@@ -33,6 +33,7 @@ INNER JOIN
 INNER JOIN
     clientes c ON co.idCliente = c.idCliente;
 ";
+// where p.id=4
 
     try {
         $consulta = $conexao->prepare($sql);
@@ -79,7 +80,7 @@ try {
     $consulta->execute();
 
 } catch (Exception $erro) {
-    die("Erro na exclusão do aluno". $erro->getMessage());
+    die("Erro na exclusão". $erro->getMessage());
 }
 
 

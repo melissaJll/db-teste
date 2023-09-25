@@ -46,17 +46,18 @@ if(isset($_POST['agendar'])){
 
 	<form action="#" method="post">
 	    <p><label for="plataforma">Plataforma:</label>
-		<select required name="plataforma" id="plataforma">
+		<input type="text" id="plataforma" name="plataforma"></p>
+		<!-- <select required name="plataforma" id="plataforma">
 				<option value=""> </option>
 				<option value="">Zoom</option>
 				<option value=""> Google meets</option>
-		</select>
+		</select> -->
         
       <p><label for="data">Data:</label>
 	    <input type="date" id="data" name="data"></p>
 
 		<p>
-			<label for="profissional">profissionais: </label>
+			<label for="profissional">Profissional: </label>
 			<select required name="profissional" id="profissional">
 				<option value=""> </option>
 

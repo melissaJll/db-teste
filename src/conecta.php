@@ -1,12 +1,12 @@
 <?php
 
-$servidor = "localhost:3307"; //$servidor = "localhost";
+//$servidor = "localhost:3307"; 
+$servidor = "localhost";
 $banco = "crud_psi";
 $usuario = "root";
 $senha = "";
 
 try {
-//Conexão com Objeto PDO
     $conexao = new PDO(
         "mysql:host=$servidor;
         dbname=$banco;

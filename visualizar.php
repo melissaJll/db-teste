@@ -50,12 +50,12 @@ as páginas de atualização e exclusão. -->
         <thead>
             <tr>
                 <th class="bg-danger">Id</th>
-                <th class="bg-danger">Plataforma</th>
                 <th class="bg-danger">Paciente</th>
                 <th class="bg-danger">Profissional</th>
                 <th class="bg-danger">Preço</th>
                 <th class="bg-danger">Data da consulta</th>
                 <th class="bg-danger">Situação</th>
+                <th class="bg-danger">Plataforma</th>
                 <th class="bg-danger"> </th>
             </tr>
         </thead>
@@ -64,15 +64,15 @@ as páginas de atualização e exclusão. -->
      <?php foreach ($listaConsultas as $consulta) { ?>
             <tr >
                 <td><?=$consulta["idConsulta"]?></td>
-                <td><?=$consulta["plataforma"]?></td>
                 <td><?=$consulta["nomeCliente"]?></td>
                 <td><?=$consulta["nomeProfissional"]?></td>
                 <td><?=$consulta["preco"]?></td>
                 <td><?=$consulta["dataConsulta"]?></td>
                 <td><?=verificarStatusDaData($consulta["dataConsulta"])?></td>
+                <td><?=$consulta["plataforma"]?></td>
                 <!-- Excluir -->
                 <td>
-                    <a class="excluir" href="excluir.php?id=<?=$consulta["idConsulta"]?>">Excluir</a>
+                    <a class="excluir" href= >Cancelar</a>
                     <i class="fa-solid fa-xmark" style="color: #7662a5;"></i>
                 </td>
             </tr>
@@ -84,9 +84,9 @@ as páginas de atualização e exclusão. -->
 
     <!-- <p><a href="index.php">Voltar ao início</a></p> -->
     <div class="text-center my-3">
-        <button type="button" class="btn btn-light">
+        <!-- <button type="button" class="btn btn-light">
             <i class="fa-solid fa-house" style="color: #ffffff;"></i>
-            <a href="index.php">Voltar ao início</a></button>
+            <a href="index.php">Voltar ao início</a></button> -->
         <button type="button" class="btn btn-secondary">
             <i class="fa-regular fa-plus" style="color: #f8f7f7;"></i>
             <a href="inserir.php">Inserir nova consulta</a>
@@ -94,7 +94,6 @@ as páginas de atualização e exclusão. -->
     </div>
 </div>
 
-<script src="js/confirmar-exclusao.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 </html>
